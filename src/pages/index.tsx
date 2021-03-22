@@ -5,7 +5,9 @@ type Props = {
   title: string
 }
 
-export default function Home({ title = 'Create Next App' }: Props) {
+const foo = "asdasd"
+
+export default function Home      ({ title = 'Create Next App' }: Props) {
   return (
     <div className={styles.container}>
       <Head>
