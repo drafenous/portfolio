@@ -1,5 +1,12 @@
 import styled from 'styled-components'
 
+interface RowProps {
+  direction?: 'column' | 'row'
+}
+interface ColProps {
+  textAlign?: 'left' | 'right'
+}
+
 export const Wrapper = styled.main`
   background-color: #171717;
   color: #ededed;
@@ -66,13 +73,13 @@ export const Bolder = styled.b`
   color: #da0037;
 `
 
-export const Row = styled.div`
+export const Row = styled.div<RowProps>`
   display: flex;
   justify-content: space-between;
   flex-direction: ${(props) => props.direction || 'row'};
 `
 
-export const Col = styled.div`
+export const Col = styled.div<ColProps>`
   flex-grow: 1;
   text-align: ${(props) => props.textAlign || 'left'};
 `
