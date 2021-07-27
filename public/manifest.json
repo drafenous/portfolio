@@ -1,6 +1,6 @@
 {
-  "name": "React Avançado - Boilerplate",
-  "short_name": "React Avançado",
+  "name": "Rodrigo R. Almeida - Front-end Engineer",
+  "short_name": "Drafenous Portfolio",
   "icons": [
     {
       "src": "/img/icon-192.png",
@@ -14,8 +14,8 @@
     }
   ],
   "background_color": "#06092B",
-  "description": "Boilerplate utilizando Typescript, React, NextJS e Styled Components!",
+  "description": "A sample portfolio to list my contact and main technologies",
   "display": "fullscreen",
   "start_url": "/",
-  "theme_color": "#06092B"
+  "theme_color": "#171717"
 }
