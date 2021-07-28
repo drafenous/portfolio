@@ -3,6 +3,16 @@ import Head from 'next/head'
 
 import GlobalStyles from 'styles/global'
 
+import {
+  library as FaLibrary,
+  config as FaConfig
+} from '@fortawesome/fontawesome-svg-core'
+import { fab } from '@fortawesome/free-brands-svg-icons'
+import { fas } from '@fortawesome/free-solid-svg-icons'
+
+FaLibrary.add(fab, fas)
+FaConfig.autoAddCss = false
+
 function App({ Component, pageProps }: AppProps) {
   return (
     <>

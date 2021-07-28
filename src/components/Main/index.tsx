@@ -1,17 +1,4 @@
-import {
-  faAngular,
-  faGithubSquare,
-  faInstagramSquare,
-  faLinkedin,
-  faNodeJs,
-  faReact,
-  faVuejs
-} from '@fortawesome/free-brands-svg-icons'
-import {
-  faEnvelope,
-  faEnvelopeOpen,
-  faEnvelopeOpenText
-} from '@fortawesome/free-solid-svg-icons'
+import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { BreakpointsEnum, useWindowDimensions } from 'hooks/breakpoints'
 import {
@@ -29,55 +16,62 @@ import {
   Wrapper
 } from './styles'
 
+interface FaIcon {
+  icon: IconProp
+  popover: string
+  title: string
+  url?: string
+}
+
 const Main = () => {
   const { breakpoint } = useWindowDimensions()
 
-  const contactIcons = [
+  const contactIcons: FaIcon[] = [
     {
-      icon: faEnvelopeOpenText,
+      icon: ['fas', 'envelope-open-text'],
       popover: 'E-mail',
       title: 'Contact me by E-mail',
       url:
         'mailto:rodrigo.roberto.almeida@gmail.com?subject=Contact%20from%20your%20site&body=Dear%20Rodrigo...'
     },
     {
-      icon: faGithubSquare,
+      icon: ['fab', 'github-square'],
       popover: 'Github',
       title: 'Contact me on Github',
       url: 'https://github.com/drafenous'
     },
     {
-      icon: faLinkedin,
+      icon: ['fab', 'linkedin'],
       popover: 'LinkedIn',
       title: 'Contact me on LinkedIn',
       url: 'https://www.linkedin.com/in/rodrigorobertoalmeida'
     },
     {
-      icon: faInstagramSquare,
+      icon: ['fab', 'instagram-square'],
       popover: 'Instagram',
       title: 'Contact me on Instagram',
       url: 'https://www.instagram.com/rodrigo_draf'
     }
   ]
 
-  const technologiesIcons = [
+  const technologiesIcons: FaIcon[] = [
     {
-      icon: faNodeJs,
+      icon: ['fab', 'node-js'],
       title: 'Experience with NodeJS',
       popover: 'NodeJS'
     },
     {
-      icon: faAngular,
+      icon: ['fab', 'angular'],
       title: 'Experience with Angular',
       popover: 'Angular'
     },
     {
-      icon: faReact,
+      icon: ['fab', 'react'],
       title: 'Experience with ReactJS and React Native',
       popover: 'ReactJS and React Native'
     },
     {
-      icon: faVuejs,
+      icon: ['fab', 'vuejs'],
       title: 'Experience with VueJS',
       popover: 'VueJS'
     }
