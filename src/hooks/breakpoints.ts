@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-export interface BreakpointSizes {
+export interface BreakpointsSizes {
   XS: 0
   SM: 576
   MD: 768
@@ -19,7 +19,7 @@ export enum BreakpointsEnum {
 }
 
 interface WindowDimensions {
-  width?: Number
+  width?: number
   height?: number
   breakpoint: BreakpointsEnum
 }

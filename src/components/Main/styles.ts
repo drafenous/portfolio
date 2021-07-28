@@ -2,13 +2,13 @@ import styled from 'styled-components'
 
 interface RowProps {
   direction?: 'column' | 'row'
+  justifyContent?: 'space-between' | 'flex-start' | 'flex-end'
 }
 interface ColProps {
   textAlign?: 'left' | 'right' | 'center'
 }
 
 export const Wrapper = styled.main`
-  background-color: #171717;
   color: #ededed;
   text-align: center;
   display: flex;
@@ -17,7 +17,7 @@ export const Wrapper = styled.main`
   justify-content: center;
   box-sizing: border-box;
   min-height: 100%;
-  @media screen and (min-width: 768px) {
+  @media screen and (min-width: 992px) {
     min-height: 100vh;
   }
 `
@@ -31,13 +31,16 @@ export const Card = styled.div`
   flex-direction: column;
   margin: 25px;
   transition: all 200ms ease-in-out;
-  @media screen and (min-width: 768px) {
+  user-select: none;
+  @media screen and (min-width: 992px) {
     flex-direction: row;
     max-width: 1104px;
   }
   &:hover {
-    box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.5);
-    transform: scale(1.05);
+    @media screen and (min-width: 992px) {
+      box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.5);
+      transform: scale(1.015);
+    }
   }
 `
 
@@ -48,7 +51,8 @@ export const ProfileImage = styled.img.attrs({
 })`
   width: 100%;
   height: auto;
-  @media screen and (min-width: 768px) {
+  user-drag: none;
+  @media screen and (min-width: 992px) {
     width: 350px;
     height: 350px;
   }
@@ -65,6 +69,13 @@ export const ContentArea = styled.div`
   padding: 20px;
 `
 
+export const HR = styled.hr`
+  background-color: #da0037;
+  border-color: #da0037;
+  color: #da0037;
+  margin: 0 0rem 25px 0;
+`
+
 export const H1 = styled.h1`
   text-align: center;
   font-size: 24px;
@@ -76,6 +87,7 @@ export const H2 = styled.h2`
   font-weight: bold;
   font-size: 18px;
   line-height: 24px;
+  margin-bottom: 12px;
 `
 
 export const Paragraph = styled.p`
@@ -94,11 +106,22 @@ export const Bolder = styled.b`
 
 export const Row = styled.div<RowProps>`
   display: flex;
-  justify-content: space-between;
+  justify-content: ${(props) => props.justifyContent || 'space-between'};
   flex-direction: ${(props) => props.direction || 'row'};
+  gap: 10px;
 `
 
 export const Col = styled.div<ColProps>`
   flex-grow: 1;
   text-align: ${(props) => props.textAlign || 'left'};
+`
+
+export const IconAnchor = styled.a`
+  height: 30px;
+  width: 30px;
+  color: #ededed;
+  transition: color 200ms ease-in-out;
+  :hover {
+    color: #da0037;
+  }
 `
