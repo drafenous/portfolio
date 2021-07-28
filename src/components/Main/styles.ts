@@ -124,4 +124,8 @@ export const IconAnchor = styled.a`
   :hover {
     color: #da0037;
   }
+  & svg {
+    width: 100%;
+    height: 100%;
+  }
 `
