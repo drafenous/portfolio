@@ -4,46 +4,65 @@ interface RowProps {
   direction?: 'column' | 'row'
 }
 interface ColProps {
-  textAlign?: 'left' | 'right'
+  textAlign?: 'left' | 'right' | 'center'
 }
 
 export const Wrapper = styled.main`
   background-color: #171717;
   color: #ededed;
-  width: 100%;
-  height: 100%;
   text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  box-sizing: border-box;
+  min-height: 100%;
+  @media screen and (min-width: 768px) {
+    min-height: 100vh;
+  }
 `
 
 export const Card = styled.div`
   background-color: #444444;
-  width: 1104px;
   height: auto;
   border-bottom: 2px solid #da0037;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  margin: 25px;
+  transition: all 200ms ease-in-out;
+  @media screen and (min-width: 768px) {
+    flex-direction: row;
+    max-width: 1104px;
+  }
+  &:hover {
+    box-shadow: 0px 7px 14px rgba(0, 0, 0, 0.5);
+    transform: scale(1.05);
+  }
 `
 
 export const ProfileImage = styled.img.attrs({
-  src: 'img/profile-image.jpg'
+  src: 'img/profile-image.jpg',
+  alt:
+    'Imagem de perfil de Rodrigo Roberto de Almeida em um fundo branco, com camisa social preta, gravata e cabelo penteado de lado.'
 })`
-  width: 350px;
-  height: 350px;
+  width: 100%;
+  height: auto;
+  @media screen and (min-width: 768px) {
+    width: 350px;
+    height: 350px;
+  }
 `
 
 export const ContentArea = styled.div`
   font-family: Ubuntu;
   box-sizing: border-box;
-  max-width: 595px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin: 0 auto;
+  margin: 0px auto;
+  max-width: 595px;
+  padding: 20px;
 `
 
 export const H1 = styled.h1`
