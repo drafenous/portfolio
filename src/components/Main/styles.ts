@@ -125,3 +125,13 @@ export const IconAnchor = styled.a`
     color: #da0037;
   }
 `
+
+export const IconDiv = styled.div`
+  height: 30px;
+  width: 30px;
+  color: #ededed;
+  transition: color 200ms ease-in-out;
+  :hover {
+    color: #da0037;
+  }
+`

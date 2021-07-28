@@ -10,6 +10,7 @@ import {
   H2,
   HR,
   IconAnchor,
+  IconDiv,
   Paragraph,
   ProfileImage,
   Row,
@@ -123,6 +124,7 @@ const Main = () => {
                       href={contact.url}
                       target="_blank"
                       aria-label={contact.title}
+                      rel="noreferrer"
                     >
                       <FontAwesomeIcon
                         icon={contact.icon}
@@ -148,15 +150,14 @@ const Main = () => {
                   }
                 >
                   {technologiesIcons.map((technologie, idx) => (
-                    <IconAnchor key={idx}>
+                    <IconDiv key={idx}>
                       <FontAwesomeIcon
-                        key={idx}
                         icon={technologie.icon}
                         fixedWidth
                         aria-hidden={true}
                         title={technologie.title}
                       />
-                    </IconAnchor>
+                    </IconDiv>
                   ))}
                 </Row>
               </Col>
