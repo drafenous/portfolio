@@ -21,10 +21,7 @@ function App({ Component, pageProps }: AppProps) {
         <link rel="shortcut icon" href="/img/icon-512.png" />
         <link rel="apple-touch-icon" href="/img/icon-512.png" />
         <link rel="manifest" href="/manifest.json" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1.0, maximum-scale=1.0"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta name="theme-color" content="#171717" />
         <link
           href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
