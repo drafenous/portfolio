@@ -1,6 +1,6 @@
 {
   "name": "Rodrigo R. Almeida - Front-end Engineer",
-  "short_name": "Drafenous Portfolio",
+  "short_name": "Rodrigo's Portfolio",
   "icons": [
     {
       "src": "/img/icon-192.png",
@@ -13,9 +13,9 @@
       "sizes": "512x512"
     }
   ],
-  "background_color": "#06092B",
+  "background_color": "#171717",
   "description": "A sample portfolio to list my contact and main technologies",
-  "display": "fullscreen",
+  "display": "standalone",
   "start_url": "/",
   "theme_color": "#171717"
 }
