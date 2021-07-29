@@ -1,15 +1,16 @@
 import styled from 'styled-components'
-
-interface RowProps {
+interface DarkModeProps {
+  darkModeEnabled?: boolean
+}
+interface RowProps extends DarkModeProps {
   direction?: 'column' | 'row'
   justifyContent?: 'space-between' | 'flex-start' | 'flex-end'
 }
-interface ColProps {
+interface ColProps extends DarkModeProps {
   textAlign?: 'left' | 'right' | 'center'
 }
 
 export const Wrapper = styled.main`
-  color: #ededed;
   text-align: center;
   display: flex;
   flex-direction: column;
@@ -22,8 +23,9 @@ export const Wrapper = styled.main`
   }
 `
 
-export const Card = styled.div`
-  background-color: #444444;
+export const Card = styled.div<DarkModeProps>`
+  background-color: ${({ darkModeEnabled }) =>
+    darkModeEnabled ? '#444444' : '#DDDDDD'};
   height: auto;
   border-bottom: 2px solid #da0037;
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
@@ -32,6 +34,8 @@ export const Card = styled.div`
   margin: 25px;
   transition: all 200ms ease-in-out;
   user-select: none;
+  position: relative;
+  color: ${({ darkModeEnabled }) => (darkModeEnabled ? '#EDEDED' : '#171717')};
   @media screen and (min-width: 992px) {
     flex-direction: row;
     max-width: 1104px;
@@ -42,6 +46,21 @@ export const Card = styled.div`
       transform: scale(1.015);
     }
   }
+`
+
+export const ButtonToggleTheme = styled.button<DarkModeProps>`
+  position: absolute;
+  right: 0;
+  top: 0;
+  border: 0;
+  width: 30px;
+  height: 30px;
+  font-size: 18px;
+  padding: 7px;
+  background-color: transparent;
+  cursor: pointer;
+  text-shadow: 0px 2px 4px #000000;
+  color: ${({ darkModeEnabled }) => (darkModeEnabled ? '#ffe600' : '#FFFFFF')};
 `
 
 export const ProfileImage = styled.img.attrs({
@@ -141,10 +160,10 @@ export const Popover = styled.div`
   }
 `
 
-export const IconAnchor = styled.a`
+export const IconAnchor = styled.a<DarkModeProps>`
   height: 30px;
   width: 30px;
-  color: #ededed;
+  color: ${({ darkModeEnabled }) => (darkModeEnabled ? '#EDEDED' : '#171717')};
   transition: color 200ms ease-in-out;
   position: relative;
   :hover {
@@ -156,10 +175,10 @@ export const IconAnchor = styled.a`
   }
 `
 
-export const IconDiv = styled.div`
+export const IconDiv = styled.div<DarkModeProps>`
   height: 30px;
   width: 30px;
-  color: #ededed;
+  color: ${({ darkModeEnabled }) => (darkModeEnabled ? '#EDEDED' : '#171717')};
   transition: color 200ms ease-in-out;
   position: relative;
   :hover {

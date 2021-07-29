@@ -16,8 +16,14 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    transition: all 200ms ease-in-out;
     font-family: --apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    background-color: #171717;
+    &.dark-mode{
+      background-color: #171717;
+    }
+    &.light-mode{
+      background-color: #EDEDED;
+    }
   }
 `
 

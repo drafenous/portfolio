@@ -3,6 +3,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { BreakpointsEnum, useWindowDimensions } from 'hooks/breakpoints'
 import {
   Bolder,
+  ButtonToggleTheme,
   Card,
   Col,
   ContentArea,
@@ -17,6 +18,7 @@ import {
   Row,
   Wrapper
 } from './styles'
+import useDarkMode from 'use-dark-mode'
 
 interface FaIcon {
   icon: IconProp
@@ -27,6 +29,8 @@ interface FaIcon {
 
 const Main = () => {
   const { breakpoint } = useWindowDimensions()
+  const darkMode = useDarkMode(true)
+  const { value: darkModeEnabled } = darkMode
 
   const contactIcons: FaIcon[] = [
     {
@@ -81,7 +85,27 @@ const Main = () => {
 
   return (
     <Wrapper>
-      <Card>
+      <Card darkModeEnabled={darkModeEnabled}>
+        <ButtonToggleTheme
+          onClick={darkMode.toggle}
+          darkModeEnabled={darkModeEnabled}
+        >
+          {darkMode.value ? (
+            <FontAwesomeIcon
+              icon={['fas', 'sun']}
+              fixedWidth
+              aria-hidden={true}
+              title={'Toggle Dark Theme'}
+            />
+          ) : (
+            <FontAwesomeIcon
+              icon={['fas', 'moon']}
+              fixedWidth
+              aria-hidden={true}
+              title={'Toggle Dark Theme'}
+            />
+          )}
+        </ButtonToggleTheme>
         <ProfileImage />
         <ContentArea>
           <Row direction="column">
@@ -126,6 +150,7 @@ const Main = () => {
                       target="_blank"
                       aria-label={contact.title}
                       rel="noreferrer"
+                      darkModeEnabled={darkModeEnabled}
                     >
                       <FontAwesomeIcon
                         icon={contact.icon}
@@ -152,7 +177,7 @@ const Main = () => {
                   }
                 >
                   {technologiesIcons.map((technologie, idx) => (
-                    <IconDiv key={idx}>
+                    <IconDiv key={idx} darkModeEnabled={darkModeEnabled}>
                       <FontAwesomeIcon
                         icon={technologie.icon}
                         fixedWidth
