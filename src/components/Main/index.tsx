@@ -12,6 +12,7 @@ import {
   IconAnchor,
   IconDiv,
   Paragraph,
+  Popover,
   ProfileImage,
   Row,
   Wrapper
@@ -132,6 +133,7 @@ const Main = () => {
                         aria-hidden={true}
                         title={contact.title}
                       />
+                      <Popover>{contact.popover}</Popover>
                     </IconAnchor>
                   ))}
                 </Row>
@@ -157,6 +159,7 @@ const Main = () => {
                         aria-hidden={true}
                         title={technologie.title}
                       />
+                      <Popover>{technologie.popover}</Popover>
                     </IconDiv>
                   ))}
                 </Row>

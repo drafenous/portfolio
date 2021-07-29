@@ -116,13 +116,42 @@ export const Col = styled.div<ColProps>`
   text-align: ${(props) => props.textAlign || 'left'};
 `
 
+export const Popover = styled.div`
+  position: absolute;
+  background-color: #000000;
+  color: #ffffff;
+  font-size: 0.9rem;
+  border-radius: 5px;
+  padding: 10px;
+  white-space: nowrap;
+  opacity: 0;
+  top: 130%;
+  left: 50%;
+  transform: translateX(calc(-50% - 2px));
+
+  ::before {
+    content: '';
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-bottom: 5px solid #000000;
+    position: absolute;
+    top: -4px;
+    left: calc(50% - 4px);
+  }
+`
+
 export const IconAnchor = styled.a`
   height: 30px;
   width: 30px;
   color: #ededed;
   transition: color 200ms ease-in-out;
+  position: relative;
   :hover {
     color: #da0037;
+    ${Popover} {
+      opacity: 1;
+      z-index: 1;
+    }
   }
 `
 
@@ -131,7 +160,12 @@ export const IconDiv = styled.div`
   width: 30px;
   color: #ededed;
   transition: color 200ms ease-in-out;
+  position: relative;
   :hover {
     color: #da0037;
+    ${Popover} {
+      opacity: 1;
+      z-index: 1;
+    }
   }
 `
