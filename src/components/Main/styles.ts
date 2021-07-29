@@ -128,6 +128,7 @@ export const Popover = styled.div`
   top: 130%;
   left: 50%;
   transform: translateX(calc(-50% - 2px));
+  transition: opacity 200ms ease-in-out;
 
   ::before {
     content: '';
