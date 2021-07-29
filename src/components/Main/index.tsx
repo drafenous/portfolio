@@ -89,20 +89,21 @@ const Main = () => {
         <ButtonToggleTheme
           onClick={darkMode.toggle}
           darkModeEnabled={darkModeEnabled}
+          aria-label="Toggle dark theme"
         >
           {darkMode.value ? (
             <FontAwesomeIcon
               icon={['fas', 'sun']}
               fixedWidth
               aria-hidden={true}
-              title={'Toggle Dark Theme'}
+              title={'Turn light theme on'}
             />
           ) : (
             <FontAwesomeIcon
               icon={['fas', 'moon']}
               fixedWidth
               aria-hidden={true}
-              title={'Toggle Dark Theme'}
+              title={'Turn dark theme on'}
             />
           )}
         </ButtonToggleTheme>
