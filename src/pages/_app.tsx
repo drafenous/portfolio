@@ -118,11 +118,6 @@ function App({ Component, pageProps }: AppProps) {
           name="msapplication-square310x310logo"
           content="/img/favicon/mstile-310x310.png"
         />
-
-        <link
-          href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap"
-          rel="stylesheet"
-        />
         <meta
           name="description"
           content="A sample portfolio to list my contact and main technologies"

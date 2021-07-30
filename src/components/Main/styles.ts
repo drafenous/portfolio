@@ -64,9 +64,10 @@ export const ButtonToggleTheme = styled.button<DarkModeProps>`
 `
 
 export const ProfileImage = styled.img.attrs({
-  src: 'img/profile-image.jpg',
-  alt:
-    'Imagem de perfil de Rodrigo Roberto de Almeida em um fundo branco, com camisa social preta, gravata e cabelo penteado de lado.'
+  src: '/img/profile-image.jpg',
+  alt: 'Imagem de perfil de Rodrigo Roberto de Almeida em um fundo branco, com camisa social preta, gravata e cabelo penteado de lado.',
+  width: '992px',
+  height: '992px'
 })`
   width: 100%;
   height: auto;

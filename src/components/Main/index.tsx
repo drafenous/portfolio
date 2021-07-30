@@ -1,6 +1,6 @@
 import { IconProp } from '@fortawesome/fontawesome-svg-core'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { BreakpointsEnum, useWindowDimensions } from 'hooks/breakpoints'
+import { BreakpointsEnum, useWindowDimensions } from '../../hooks/'
 import {
   Bolder,
   ButtonToggleTheme,
