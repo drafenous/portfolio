@@ -38,6 +38,7 @@ const Main = () => {
       popover: 'E-mail',
       title: 'Contact me by E-mail',
       url:
+        /* prettier-ignore */
         'mailto:rodrigo.roberto.almeida@gmail.com?subject=Contact%20from%20your%20site&body=Dear%20Rodrigo...'
     },
     {
