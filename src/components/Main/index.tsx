@@ -121,7 +121,7 @@ const Main = () => {
 
             <Paragraph>
               “My name is <Bolder>Rodrigo R. Almeida</Bolder>, and my nickname
-              on web is <Bolder>Drafenous</Bolder>, you can choice how you want
+              on web is <Bolder>Drafenous</Bolder>, you can choose how you want
               to call me.”
             </Paragraph>
             <Paragraph>
