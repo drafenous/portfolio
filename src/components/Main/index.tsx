@@ -114,7 +114,7 @@ const Main = () => {
             <H1>
               <Bolder>Rodrigo R. Almeida</Bolder>
               <br />
-              Front-end Engineer at <Bolder>CantuStore</Bolder>
+              Front-end Engineer.
             </H1>
 
             {breakpoint <= BreakpointsEnum.SM && <HR />}
